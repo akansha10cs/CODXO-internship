@@ -1,0 +1,54 @@
+import java.util.Scanner;
+import java.util.HashMap;
+
+public class AttendanceManagementSystem {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        HashMap<String, Boolean> attendanceRecords = new HashMap<>();
+        
+        System.out.println("Welcome to Attendance Management System!");
+        
+        while (true) {
+            System.out.println("\nMenu:");
+            System.out.println("1. Mark Attendance");
+            System.out.println("2. View Attendance Records");
+            System.out.println("3. Exit");
+            System.out.print("Enter your choice: ");
+            
+            int choice = scanner.nextInt();
+            
+            switch (choice) {
+                case 1:
+                    markAttendance(scanner, attendanceRecords);
+                    break;
+                case 2:
+                    viewAttendance(attendanceRecords);
+                    break;
+                case 3:
+                    System.out.println("Exiting...");
+                    scanner.close();
+                    System.exit(0);
+                default:
+                    System.out.println("Invalid choice! Please try again.");
+            }
+        }
+    }
+    
+    public static void markAttendance(Scanner scanner, HashMap<String, Boolean> attendanceRecords) {
+        System.out.print("Enter student name: ");
+        String studentName = scanner.next();
+        
+        // Assuming attendance is marked as present (true) by default
+        attendanceRecords.put(studentName, true);
+        
+        System.out.println("Attendance marked for " + studentName);
+    }
+    
+    public static void viewAttendance(HashMap<String, Boolean> attendanceRecords) {
+        System.out.println("Attendance Records:");
+        for (String studentName : attendanceRecords.keySet()) {
+            String status = attendanceRecords.get(studentName) ? "Present" : "Absent";
+            System.out.println(studentName + ": " + status);
+        }
+    }
+}
