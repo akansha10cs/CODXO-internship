@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+public class CurrencyConverter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Welcome to Currency Converter!");
+        System.out.println("Available Currencies:");
+        System.out.println("1. Euro (EUR)");
+        System.out.println("2. US Dollar (USD)");
+        System.out.println("3. British Pound (GBP)");
+        System.out.println("4. Japanese Yen (JPY)");
+        System.out.println("5. Australian Dollar (AUD)");
+        System.out.print("Select the currency you want to convert to (1-5): ");
+        
+        int choice = scanner.nextInt();
+        
+        double conversionRate = 0.0;
+        String currencyName = "";
+        
+        switch (choice) {
+            case 1:
+                conversionRate = 0.011; // 1 INR = 0.011 EUR
+                currencyName = "Euros (EUR)";
+                break;
+            case 2:
+                conversionRate = 0.014; // 1 INR = 0.014 USD
+                currencyName = "US Dollars (USD)";
+                break;
+            case 3:
+                conversionRate = 0.010; // 1 INR = 0.010 GBP
+                currencyName = "British Pounds (GBP)";
+                break;
+            case 4:
+                conversionRate = 1.48; // 1 INR = 1.48 JPY
+                currencyName = "Japanese Yen (JPY)";
+                break;
+            case 5:
+                conversionRate = 0.019; // 1 INR = 0.019 AUD
+                currencyName = "Australian Dollars (AUD)";
+                break;
+            default:
+                System.out.println("Invalid choice!");
+                System.exit(0);
+        }
+        
+        System.out.print("Enter the amount in Indian Rupees (INR): ");
+        double amountInRupees = scanner.nextDouble();
+        
+        double convertedAmount = amountInRupees * conversionRate;
+        
+        System.out.println(amountInRupees + " INR is equal to " + convertedAmount + " " + currencyName);
+        
+        scanner.close();
+    }
+}
