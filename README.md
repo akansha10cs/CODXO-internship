@@ -1,8 +1,8 @@
-# JAVA PROGRAMMIN INTERNSHIP AT CODXO #
+##### JAVA PROGRAMMIN INTERNSHIP AT CODXO #####
 
 INTERNSHIP TASKS LISTED BELOW:-
 
-*#NUMBER GUESSING GAME#*
+# NUMBER GUESSING GAME
 This code creates a simple number guessing game where the user has to guess a randomly chosen number between 1 and 100. The program will provide feedback (too high, too low) based on the user's guesses until they guess the correct number.
 
 # CURRENCY CONVERSION
